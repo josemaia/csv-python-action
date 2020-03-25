@@ -17,7 +17,8 @@ def main():
 
     # Add new lines
     writer.writerow([my_input, 'M', 25.0, 128.0, 205.0])
-    print(f"::set-output name=myOutput::{outBuffer.getvalue().replace('\n', '%0A')}")
+    output = outBuffer.getvalue().replace('\n', '%0A')
+    print(f"::set-output name=myOutput::{output}")
     outBuffer.close()
 
 
