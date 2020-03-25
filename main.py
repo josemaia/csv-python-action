@@ -1,10 +1,10 @@
 import csv
 import io
+import os
 
 
 def main():
-    # my_input = os.environ["INPUT_MYINPUT"]
-    my_input = "Jorge"
+    my_input = os.environ["INPUT_MYINPUT"]
 
     outBuffer = io.StringIO()
     with open('sampleFiles/a.csv', 'r') as csvfile:
@@ -17,7 +17,9 @@ def main():
 
     # Add new lines
     writer.writerow([my_input, 'M', 25.0, 128.0, 205.0])
-    output = outBuffer.getvalue().replace('\n', '%0A')
+
+    output = outBuffer.getvalue().replace('\n', '%0A').replace('\r', '%0D')
+
     print(f"::set-output name=myOutput::{output}")
     outBuffer.close()
 
