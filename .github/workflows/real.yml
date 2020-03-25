@@ -5,7 +5,7 @@ on:
       - master
 jobs:
   lint:
-    name: Lint
+    name: Run
     runs-on: ubuntu-latest
     steps:
       - name: Set up Python 3.7
@@ -15,8 +15,13 @@ jobs:
 
       - uses: actions/checkout@v1
 
+      - uses: josemaia/csv-python-action@master
+        with:
+          myInput: teste
+        id: create_csv
+
       - name: create csv file
-        run: echo '${{ steps.create_csv.outputs.csv }}' > ./sampleFiles/a.csv
+        run: echo '${{ steps.create_csv.outputs.myOutput }}' > ./sampleFiles/a.csv
 
       - name: git add
         run: git add -N ./sampleFiles/a.csv
