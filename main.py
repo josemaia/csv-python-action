@@ -1,14 +1,12 @@
-import os
 import csv
 import io
 
 
 def main():
-    #my_input = os.environ["INPUT_MYINPUT"]
+    # my_input = os.environ["INPUT_MYINPUT"]
     my_input = "Jorge"
 
     outBuffer = io.StringIO()
-    #fields = ['Name', 'Sex', 'Age', 'Height (in)', 'Weight (lbs)']
     with open('sampleFiles/a.csv', 'r') as csvfile:
         reader = csv.reader(
             csvfile, quoting=csv.QUOTE_NONNUMERIC, skipinitialspace=True)
