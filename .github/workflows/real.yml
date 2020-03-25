@@ -13,7 +13,7 @@ jobs:
         with:
           python-version: "3.7"
 
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
 
       - uses: josemaia/csv-python-action@master
         with:
