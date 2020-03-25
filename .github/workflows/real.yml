@@ -26,6 +26,6 @@ jobs:
       - name: git add
         run: git add -N ./sampleFiles/a.csv
 
-      - uses: stefanzweifel/git-auto-commit-action@v2.1.0
+      - uses: stefanzweifel/git-auto-commit-action@v4.1.1
         with:
           commit_message: Update CSV
